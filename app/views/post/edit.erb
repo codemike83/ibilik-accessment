@@ -1,0 +1,10 @@
+<h1>Edit room posting Ad:</h1>
+
+<form action="/posts/<%= @post.id %>" method="POST">
+	<input type="hidden" name="_method" value="patch">
+	<label>Title of room posting Ad: </label>
+	<input type="text" name="post_title" value="<%= @post.post_title%>"><br>
+	<label>Room description: </label>
+	<textarea name="post_body"><%= @post.post_body %></textarea><br>
+	<input type="submit" value="Edit">
+</form>

@@ -1,0 +1,16 @@
+<h1>My Profile</h1>
+
+Name: <%= @user.name %><br>
+Email: <%= @user.email %><br>
+Description:  <%= @user.description %><br>
+
+<a href="/users/<%= @user.id %>/edit"><button>Edit profile</button></a>
+<form action="/users/<%= @user.id %>" method="POST">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Delete">
+</form>
+<a href="/users/logout"><button>Logout</button></a>
+
+<a href="/posts/new"><h2>Post a room for rent</h2></a>
+
+<a href="/posts"><h3>ROOMS AVAILABLE CURRENTLY:</h3></a>

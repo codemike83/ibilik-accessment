@@ -1,0 +1,21 @@
+<h1><%= @post.post_title %></h1><h3><%= @post.user.name %> </h3>
+
+ 
+<br>
+<%= @post.post_body %><br>
+
+<% if current_user.id == @post.user.id %>
+<a href="/posts/<%= @post.id %>/edit"><button>Edit post:</button></a>
+
+<form action="/posts/<%= @post.id %>" method="POST">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Delete">
+</form>
+<% end %>
+<a href="/posts/<%= @post.id %>/comments/new"><button>Enquire:</button></a>
+
+<% @post.comments.each do |a| %>
+<ol>
+<%= a.comment_body %> by <%= current_user.name %> 
+</ol>
+<% end %>

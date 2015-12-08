@@ -1,0 +1,8 @@
+<h1>Trending rooms for rent</h1>
+<h3>Just click to enquire now</h3>
+
+<% @posts.each do |p| %>
+<ol>
+<a href="/posts/<%= p.id %>"><%= p.post_title %></a>
+</ol>
+<% end %>
